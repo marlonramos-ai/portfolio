@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marlon Ramos</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li>
+                <a href="index.html">Principal</a>
+            </li>
+            <li>
+                <a href="about.html">Sobre</a>
+            </li>
+            <li>
+                <a href="project.html">Projetos</a>
+            </li>
+            <li>
+                <a href="news.html">Novidades</a>
+            </li>
+            <li>
+                <a href="contact.html">Contato</a>
+            </li>
+        </ul>
+    </nav>
+    <h1>Marlon Ramos</h1>
+
+    <form class="formul" action="https://formspree.io/f/mwvreejv" method="POST" novalidate>
+
+        <p>
+            <label for="nome">Nome:</label> <br>
+            <input type="text" id="nome" name="nome" required placeholder="Nome Completo">
+        <div class="error" id="erro-nome"></div>
+        </p>
+
+        <p>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required placeholder="digitalogo@exemplo.com">
+        <div class="error" id="erro-email"></div>
+        </p>
+        <p>
+            <label for="mensagem">Mensagem:</label><br>
+            <textarea id="mensagem" name="mensagem" rows="6" required placeholder="Digite a mensagem"></textarea>
+        <div class="error" id="erro-mensagem"></div>
+        </p>
+        <p>
+            <button type="submit">Enviar Email</button>
+        </p>
+    </form>
+
+    <footer>
+        <a href="https://www.linkedin.com/in/marlon-ramos-558582238/" target="_blank" rel="noopener noreferrer">
+            <p>LinkedIn</p>
+        </a>
+        <a href="https://www.instagram.com/ramosmln_?igsh=aXlwd3hmeHh2bzE4&utm_source=qr" target="_blank"
+            rel="noopener noreferrer">
+            <p>Instagram</p>
+        </a>
+    </footer>
+
+    <script>
+        document.getElementById('contato-form').addEventListener('submit', function (e) {
+            const nome = document.getElementsById('nome').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const msg = document.getElementById('mensagem').value.trim();
+
+            if (!nome || nome.length < 4) {
+                alert('Pelo amor de God, informe um nome válido(mínimo 12020200 caracteres).');
+                e.preventDefault();
+                return;
+            }
+
+            if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                alert('Por favor, insira um email válido.');
+                e.preventDefault();
+                return;
+
+            }
+
+            if (!msg || msg.length < 10) {
+                alert('A mensagem deve ter pelo menos 10 caracteres.');
+                e.preventDefault();
+                return;
+            }
+        });
+    </script>
+
+    <footer> &copy; 2026 Copyright | Marlon Ramos &reg;</footer>
+
+</body>
+
+</html>
